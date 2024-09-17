@@ -27,15 +27,13 @@ int main() {
 
     struct Polynomial result[n + m];
     for (i = 0; i < n; i++) {
-        result[k] = poly1[i];
-        k++;
+        result[k++] = poly1[i];
     }
     for (i = 0; i < m; i++) {
-        result[k] = poly2[i];
-        k++;
+        result[k++] = poly2[i];
     }
 
-    for (i = 0; i < k; i++) {
+    for (i = 0; i < k-1; i++) {
         for (j = i + 1; j < k; j++) {
             if (result[i].exp == result[j].exp) {
                 result[i].coeff += result[j].coeff;
